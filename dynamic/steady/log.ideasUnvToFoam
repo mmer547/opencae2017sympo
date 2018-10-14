@@ -1,0 +1,93 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1806                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : v1806
+Arch   : "LSB;label=32;scalar=64"
+Exec   : ideasUnvToFoam Compound_Mesh_2.unv
+Date   : Oct 15 2018
+Time   : 00:32:06
+Host   : "LAPTOP-OUB5D812"
+PID    : 1070
+I/O    : uncollated
+Case   : /mnt/c/Users/hamme/Documents/800_OCBKANSAI/shibata/opencae2017sympo-kai/steady
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Processing tag:164
+Starting reading units at line 3.
+l:1
+units:"  SI: Meter (newton)"
+unitType:2
+Unit factors:
+    Length scale       : 1
+    Force scale        : 1
+    Temperature scale  : 1
+    Temperature offset : 273.15
+
+
+Processing tag:2420
+Skipping tag 2420 on line 9
+Skipping section at line 9.
+
+Processing tag:2411
+Starting reading points at line 20.
+Read 25950 points.
+
+Processing tag:2412
+Starting reading cells at line 51923.
+First occurrence of element type 11 for cell 1 at line 51924
+First occurrence of element type 44 for cell 1165 at line 58728
+First occurrence of element type 115 for cell 22251 at line 110860
+Read 12474 cells and 26066 boundary faces.
+
+Processing tag:2467
+Starting reading patches at line 135810.
+For group 1 named inlet trying to read 41 patch face indices.
+For group 2 named lower trying to read 250 patch face indices.
+For group 3 named upper trying to read 250 patch face indices.
+For group 4 named outlet trying to read 41 patch face indices.
+For group 5 named empty trying to read 24948 patch face indices.
+For group 6 named ZoneID trying to read 10250 patch face indices.
+For group 7 named overset trying to read 168 patch face indices.
+For group 8 named cylinder trying to read 84 patch face indices.
+For group 9 named beam trying to read 76 patch face indices.
+For group 10 named ZoneID2 trying to read 2224 patch face indices.
+
+Of 26066 so-called boundary faces 208 belong to two cells and are therefore internal
+Sorting boundary faces according to group (patch)
+0: inlet is patch
+1: lower is patch
+2: upper is patch
+3: outlet is patch
+4: empty is patch
+5: ZoneID is cellZone
+6: overset is patch
+7: cylinder is patch
+8: beam is patch
+9: ZoneID2 is cellZone
+
+Constructing mesh with non-default patches of size:
+    inlet	41
+    lower	250
+    upper	250
+    outlet	41
+    empty	24948
+    overset	168
+    cylinder	84
+    beam	76
+
+Adding cell and face zones
+ Cell Zone ZoneID2 	2224
+ Cell Zone ZoneID 	10250
+
+End
+

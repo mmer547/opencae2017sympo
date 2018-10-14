@@ -1,0 +1,1764 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1806                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : v1806
+Arch   : "LSB;label=32;scalar=64"
+Exec   : overPimpleDyMFoam
+Date   : Oct 15 2018
+Time   : 00:32:08
+Host   : "LAPTOP-OUB5D812"
+PID    : 1081
+I/O    : uncollated
+Case   : /mnt/c/Users/hamme/Documents/800_OCBKANSAI/shibata/opencae2017sympo-kai/steady
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create mesh for time = 0
+
+Selecting dynamicFvMesh dynamicOversetFvMesh
+Selecting motion solver: displacementLaplacian
+--> FOAM Warning : 
+    From function const Foam::HashTable<Foam::List<int> >& Foam::polyBoundaryMesh::groupPatchIDs() const
+    in file meshes/polyMesh/polyBoundaryMesh/polyBoundaryMesh.C at line 441
+    Removing patchGroup 'empty' which clashes with patch 4 of the same name.
+--> FOAM Warning : 
+    From function const Foam::HashTable<Foam::List<int> >& Foam::polyBoundaryMesh::groupPatchIDs() const
+    in file meshes/polyMesh/polyBoundaryMesh/polyBoundaryMesh.C at line 441
+    Removing patchGroup 'overset' which clashes with patch 5 of the same name.
+Selecting motion diffusion: inverseDistance
+Selecting patchDistMethod meshWave
+
+PIMPLE: Operating solver in PISO mode
+
+Reading field p
+
+Reading field U
+
+Reading/calculating face flux field phi
+
+Creating cellMask field to block out hole cells
+
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+--> FOAM Warning : 
+    From function bool Foam::oversetPolyPatch::master() const
+    in file oversetPolyPatch/oversetPolyPatch.C at line 149
+    The master overset patch is not the first patch. Generally the first patch should be an overset patch to guarantee consistent operation.
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+Creating interpolatedCells field 
+
+Selecting incompressible transport model Newtonian
+Selecting turbulence model type laminar
+Selecting laminar stress model Stokes
+Reading/calculating face velocity Uf
+
+No MRF models present
+
+No finite volume options present
+Courant Number mean: 0.2096853272 max: 0.6136450166
+
+Starting time loop
+
+Courant Number mean: 0.2096853272 max: 0.6136450166
+deltaT = 0.002222222222
+Time = 0.00222222
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+--> FOAM Warning : 
+    From function void Foam::twoDPointCorrector::calcAddressing() const
+    in file twoDPointCorrector/twoDPointCorrector.C at line 160
+    The number of points in the mesh is not equal to twice the number of edges normal to the plane - this may be OK only for wedge geometries.
+    Please check the geometry or adjust the orthogonality tolerance.
+
+Number of normal edges: 12930 number of points: 25950
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 1, Final residual = 4.032206347e-07, No Iterations 187
+time step continuity errors : sum local = 6.140849558e-10, global = 2.685260247e-10, cumulative = 2.685260247e-10
+DILUPBiCGStab:  Solving for p, Initial residual = 0.1170860101, Final residual = 3.7825347e-07, No Iterations 159
+time step continuity errors : sum local = 2.126262357e-09, global = 8.502528348e-10, cumulative = 1.118778859e-09
+ExecutionTime = 0.8 s  ClockTime = 1 s
+
+Courant Number mean: 0.2212584736 max: 1.751344029
+deltaT = 0.0009492988134
+Time = 0.00317152
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.3313963848, Final residual = 9.622601654e-07, No Iterations 170
+time step continuity errors : sum local = 1.098781318e-09, global = -1.267202331e-10, cumulative = 9.920586263e-10
+DILUPBiCGStab:  Solving for p, Initial residual = 0.03121966399, Final residual = 6.359408236e-07, No Iterations 164
+time step continuity errors : sum local = 1.353568003e-09, global = 3.671006203e-10, cumulative = 1.359159247e-09
+ExecutionTime = 1.16 s  ClockTime = 1 s
+
+Courant Number mean: 0.0949401371 max: 0.7277187353
+deltaT = 0.0009780654441
+Time = 0.00414959
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.1135277011, Final residual = 3.01848418e-07, No Iterations 166
+time step continuity errors : sum local = 6.476703253e-10, global = -1.76054696e-10, cumulative = 1.183104551e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.06426044659, Final residual = 7.994742858e-07, No Iterations 160
+time step continuity errors : sum local = 6.274533758e-10, global = 4.280972171e-10, cumulative = 1.611201768e-09
+ExecutionTime = 1.5 s  ClockTime = 1 s
+
+Courant Number mean: 0.09766463073 max: 0.7451085466
+deltaT = 0.000988148593
+Time = 0.00513774
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.1425910886, Final residual = 6.830231109e-07, No Iterations 170
+time step continuity errors : sum local = 6.586804941e-10, global = 3.362206303e-10, cumulative = 1.947422398e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.03949081264, Final residual = 9.67851132e-07, No Iterations 161
+time step continuity errors : sum local = 8.058785196e-10, global = -7.973466453e-10, cumulative = 1.150075753e-09
+ExecutionTime = 1.85 s  ClockTime = 2 s
+
+Courant Number mean: 0.09853315681 max: 0.7421998279
+deltaT = 0.0009985501571
+Time = 0.00613629
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.08923369314, Final residual = 8.419868887e-07, No Iterations 154
+time step continuity errors : sum local = 7.088473707e-10, global = 1.208396471e-10, cumulative = 1.2709154e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.0253188099, Final residual = 8.048635491e-07, No Iterations 139
+time step continuity errors : sum local = 4.551500936e-10, global = 1.898894864e-10, cumulative = 1.460804886e-09
+ExecutionTime = 2.16 s  ClockTime = 2 s
+
+Courant Number mean: 0.09954375526 max: 0.7392095093
+deltaT = 0.001009287256
+Time = 0.00714557
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.1081999326, Final residual = 7.095686929e-07, No Iterations 143
+time step continuity errors : sum local = 3.584967764e-10, global = -4.460227183e-11, cumulative = 1.416202614e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.02280318172, Final residual = 9.189856587e-07, No Iterations 135
+time step continuity errors : sum local = 4.044760545e-10, global = -1.075656091e-10, cumulative = 1.308637005e-09
+ExecutionTime = 2.47 s  ClockTime = 2 s
+
+Courant Number mean: 0.1006306158 max: 0.7388071356
+deltaT = 0.001020378324
+Time = 0.00816595
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.0927017183, Final residual = 8.888659161e-08, No Iterations 164
+time step continuity errors : sum local = 4.079934761e-11, global = -2.510803974e-11, cumulative = 1.283528965e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.0189089595, Final residual = 7.659159314e-07, No Iterations 163
+time step continuity errors : sum local = 3.394806463e-10, global = -6.315655921e-12, cumulative = 1.27721331e-09
+ExecutionTime = 2.81 s  ClockTime = 3 s
+
+Courant Number mean: 0.1017520135 max: 0.740927551
+deltaT = 0.001031843249
+Time = 0.00919779
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.07217605963, Final residual = 4.797592724e-07, No Iterations 144
+time step continuity errors : sum local = 2.104972691e-10, global = 1.53717489e-10, cumulative = 1.430930799e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.01325774048, Final residual = 8.08115389e-07, No Iterations 124
+time step continuity errors : sum local = 3.346336121e-10, global = 2.378294863e-10, cumulative = 1.668760285e-09
+ExecutionTime = 3.13 s  ClockTime = 3 s
+
+Courant Number mean: 0.1029026042 max: 0.7426031327
+deltaT = 0.001043703517
+Time = 0.0102415
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.06146987464, Final residual = 6.015626612e-07, No Iterations 153
+time step continuity errors : sum local = 2.428881273e-10, global = -2.428803529e-10, cumulative = 1.425879932e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.0099346512, Final residual = 7.478115861e-07, No Iterations 133
+time step continuity errors : sum local = 2.893428473e-10, global = 8.159234569e-11, cumulative = 1.507472278e-09
+ExecutionTime = 3.44 s  ClockTime = 3 s
+
+Courant Number mean: 0.1040889376 max: 0.7442544992
+deltaT = 0.001055982381
+Time = 0.0112975
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.05443844571, Final residual = 6.978737728e-07, No Iterations 146
+time step continuity errors : sum local = 2.690857994e-10, global = -4.227868421e-11, cumulative = 1.465193593e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.008425319038, Final residual = 4.171629886e-07, No Iterations 138
+time step continuity errors : sum local = 1.542642398e-10, global = 1.177403208e-10, cumulative = 1.582933914e-09
+ExecutionTime = 3.75 s  ClockTime = 4 s
+
+Courant Number mean: 0.105315441 max: 0.745807725
+deltaT = 0.001055982381
+Time = 0.0123535
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.04575696163, Final residual = 8.921731569e-07, No Iterations 131
+time step continuity errors : sum local = 3.292873985e-10, global = -6.953187217e-11, cumulative = 1.513402042e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.006542867436, Final residual = 8.51318787e-07, No Iterations 129
+time step continuity errors : sum local = 3.065581988e-10, global = 6.602372301e-11, cumulative = 1.579425765e-09
+ExecutionTime = 4.06 s  ClockTime = 4 s
+
+Courant Number mean: 0.1053163548 max: 0.7386357588
+deltaT = 0.001068860215
+Time = 0.0134223
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.04171466963, Final residual = 7.458729174e-07, No Iterations 129
+time step continuity errors : sum local = 2.716843783e-10, global = 9.673721698e-11, cumulative = 1.676162982e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.005138854241, Final residual = 2.407077327e-07, No Iterations 121
+time step continuity errors : sum local = 8.637330095e-11, global = -2.478135256e-11, cumulative = 1.65138163e-09
+ExecutionTime = 4.37 s  ClockTime = 4 s
+
+Courant Number mean: 0.1066006695 max: 0.7403349535
+deltaT = 0.001082220968
+Time = 0.0145045
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.03735604405, Final residual = 6.735133654e-07, No Iterations 144
+time step continuity errors : sum local = 2.414078744e-10, global = 4.118192149e-11, cumulative = 1.692563551e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.004274192282, Final residual = 8.239468816e-07, No Iterations 145
+time step continuity errors : sum local = 2.933168816e-10, global = 8.552841722e-11, cumulative = 1.778091968e-09
+ExecutionTime = 4.68 s  ClockTime = 5 s
+
+Courant Number mean: 0.1079337713 max: 0.7421135047
+deltaT = 0.001096095596
+Time = 0.0156006
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.03354913398, Final residual = 7.404195518e-07, No Iterations 129
+time step continuity errors : sum local = 2.647502491e-10, global = 1.542566395e-10, cumulative = 1.932348608e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.003553405518, Final residual = 9.153135119e-07, No Iterations 131
+time step continuity errors : sum local = 3.268648557e-10, global = -2.644068243e-10, cumulative = 1.667941783e-09
+ExecutionTime = 4.99 s  ClockTime = 5 s
+
+Courant Number mean: 0.1093181739 max: 0.7439492109
+deltaT = 0.001110517906
+Time = 0.0167112
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.03046457041, Final residual = 5.906565002e-07, No Iterations 127
+time step continuity errors : sum local = 2.107252558e-10, global = 8.783297781e-11, cumulative = 1.755774761e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.003018975852, Final residual = 7.918229482e-07, No Iterations 128
+time step continuity errors : sum local = 2.838748556e-10, global = 2.632477316e-10, cumulative = 2.019022493e-09
+ExecutionTime = 5.28 s  ClockTime = 5 s
+
+Courant Number mean: 0.1107572881 max: 0.7459259669
+deltaT = 0.001110517906
+Time = 0.0178217
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.02583894887, Final residual = 6.468700245e-07, No Iterations 134
+time step continuity errors : sum local = 2.268535896e-10, global = 3.420980128e-11, cumulative = 2.053232294e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.002594838572, Final residual = 9.604048952e-07, No Iterations 130
+time step continuity errors : sum local = 3.412387912e-10, global = 3.410985098e-10, cumulative = 2.394330804e-09
+ExecutionTime = 5.59 s  ClockTime = 5 s
+
+Courant Number mean: 0.1107584717 max: 0.7381998054
+deltaT = 0.00112573048
+Time = 0.0189474
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.02577879181, Final residual = 2.070688913e-07, No Iterations 140
+time step continuity errors : sum local = 7.333758583e-11, global = -2.280717522e-11, cumulative = 2.371523629e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.002381511793, Final residual = 6.066445334e-07, No Iterations 132
+time step continuity errors : sum local = 2.179151686e-10, global = 2.142037e-10, cumulative = 2.585727329e-09
+ExecutionTime = 5.89 s  ClockTime = 6 s
+
+Courant Number mean: 0.1122758674 max: 0.7406286736
+deltaT = 0.001141585839
+Time = 0.020089
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.02386522418, Final residual = 7.782368281e-07, No Iterations 128
+time step continuity errors : sum local = 2.786297818e-10, global = -1.56469393e-10, cumulative = 2.429257936e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.002274328414, Final residual = 4.678223247e-07, No Iterations 131
+time step continuity errors : sum local = 1.691414898e-10, global = 1.56496032e-10, cumulative = 2.585753968e-09
+ExecutionTime = 6.2 s  ClockTime = 6 s
+
+Courant Number mean: 0.1138571777 max: 0.7434487484
+deltaT = 0.001158130562
+Time = 0.0212471
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.02269177276, Final residual = 8.724478247e-07, No Iterations 128
+time step continuity errors : sum local = 3.143114006e-10, global = 2.628265994e-10, cumulative = 2.848580567e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.002238276747, Final residual = 9.680962004e-07, No Iterations 130
+time step continuity errors : sum local = 3.51490644e-10, global = 3.496194738e-10, cumulative = 3.198200041e-09
+ExecutionTime = 6.5 s  ClockTime = 6 s
+
+Courant Number mean: 0.1155071655 max: 0.7467398401
+deltaT = 0.001158130562
+Time = 0.0224053
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.01868589314, Final residual = 2.706661288e-07, No Iterations 132
+time step continuity errors : sum local = 9.5889061e-11, global = 4.609583868e-11, cumulative = 3.24429588e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.002132995581, Final residual = 3.185833365e-07, No Iterations 126
+time step continuity errors : sum local = 1.143008521e-10, global = 9.923833285e-11, cumulative = 3.343534212e-09
+ExecutionTime = 6.81 s  ClockTime = 7 s
+
+Courant Number mean: 0.1155072296 max: 0.7395191676
+deltaT = 0.001175677994
+Time = 0.0235809
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.02082171336, Final residual = 2.492593825e-07, No Iterations 135
+time step continuity errors : sum local = 8.922691587e-11, global = -3.720142298e-11, cumulative = 3.306332789e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.002064762215, Final residual = 9.001224615e-07, No Iterations 128
+time step continuity errors : sum local = 3.263065759e-10, global = 2.929434716e-10, cumulative = 3.599276261e-09
+ExecutionTime = 7.13 s  ClockTime = 7 s
+
+Courant Number mean: 0.1172567905 max: 0.7436810645
+deltaT = 0.001194047963
+Time = 0.024775
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.02007228726, Final residual = 7.506189306e-08, No Iterations 129
+time step continuity errors : sum local = 2.717725878e-11, global = -1.324140933e-11, cumulative = 3.586034852e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.002060584949, Final residual = 9.560378664e-07, No Iterations 130
+time step continuity errors : sum local = 3.487790842e-10, global = 3.359318124e-10, cumulative = 3.921966664e-09
+ExecutionTime = 7.44 s  ClockTime = 7 s
+
+Courant Number mean: 0.1190885396 max: 0.7483954213
+deltaT = 0.001194047963
+Time = 0.025969
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.01610272624, Final residual = 7.722196691e-07, No Iterations 130
+time step continuity errors : sum local = 2.7532763e-10, global = -2.167384186e-10, cumulative = 3.705228246e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.002000387924, Final residual = 8.31679744e-07, No Iterations 129
+time step continuity errors : sum local = 2.990833518e-10, global = 2.921303345e-10, cumulative = 3.99735858e-09
+ExecutionTime = 7.75 s  ClockTime = 8 s
+
+Courant Number mean: 0.1190891549 max: 0.7420027657
+deltaT = 0.00121362252
+Time = 0.0271826
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.01949263948, Final residual = 6.123069039e-07, No Iterations 129
+time step continuity errors : sum local = 2.204482628e-10, global = -1.846876439e-10, cumulative = 3.812670936e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.002045366371, Final residual = 3.917987268e-07, No Iterations 132
+time step continuity errors : sum local = 1.423771722e-10, global = 1.249702577e-10, cumulative = 3.937641194e-09
+ExecutionTime = 8.05 s  ClockTime = 8 s
+
+Courant Number mean: 0.1210414943 max: 0.7480126342
+deltaT = 0.00121362252
+Time = 0.0283963
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.01534347859, Final residual = 9.665629295e-07, No Iterations 130
+time step continuity errors : sum local = 3.434780424e-10, global = 3.086183698e-11, cumulative = 3.968503031e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.002047089181, Final residual = 3.31817678e-07, No Iterations 130
+time step continuity errors : sum local = 1.186610911e-10, global = 1.169739729e-10, cumulative = 4.085477004e-09
+ExecutionTime = 8.36 s  ClockTime = 8 s
+
+Courant Number mean: 0.1210426261 max: 0.7421155926
+deltaT = 0.001234547046
+Time = 0.0296308
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.01885395602, Final residual = 2.549365721e-07, No Iterations 117
+time step continuity errors : sum local = 9.164723517e-11, global = -9.134288413e-12, cumulative = 4.076342715e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.00210242084, Final residual = 5.769172071e-07, No Iterations 131
+time step continuity errors : sum local = 2.086027548e-10, global = 2.043020133e-10, cumulative = 4.280644729e-09
+ExecutionTime = 8.66 s  ClockTime = 8 s
+
+Courant Number mean: 0.1231305017 max: 0.7492213879
+deltaT = 0.001234547046
+Time = 0.0308654
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.01431358781, Final residual = 1.826303201e-07, No Iterations 140
+time step continuity errors : sum local = 6.469113922e-11, global = -3.633141896e-11, cumulative = 4.24431331e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.002032019786, Final residual = 6.324786901e-07, No Iterations 128
+time step continuity errors : sum local = 2.253790688e-10, global = 9.534165884e-11, cumulative = 4.339654969e-09
+ExecutionTime = 8.97 s  ClockTime = 9 s
+
+Courant Number mean: 0.1231329766 max: 0.7438507655
+deltaT = 0.001234547046
+Time = 0.0320999
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.01391842951, Final residual = 5.400830914e-07, No Iterations 131
+time step continuity errors : sum local = 1.886995103e-10, global = 1.136627762e-10, cumulative = 4.453317745e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001984066494, Final residual = 8.896074927e-07, No Iterations 129
+time step continuity errors : sum local = 3.150368482e-10, global = 2.430543513e-10, cumulative = 4.696372096e-09
+ExecutionTime = 9.29 s  ClockTime = 9 s
+
+Courant Number mean: 0.1231349012 max: 0.7388934956
+deltaT = 0.001257409028
+Time = 0.0333573
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.01789630117, Final residual = 2.359309458e-07, No Iterations 126
+time step continuity errors : sum local = 8.451670124e-11, global = -5.676673979e-11, cumulative = 4.639605356e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001959940268, Final residual = 6.760534023e-07, No Iterations 127
+time step continuity errors : sum local = 2.446719121e-10, global = -2.153549865e-10, cumulative = 4.42425037e-09
+ExecutionTime = 9.59 s  ClockTime = 9 s
+
+Courant Number mean: 0.1254150296 max: 0.7478263757
+deltaT = 0.001257409028
+Time = 0.0346147
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.01281096156, Final residual = 9.164972261e-07, No Iterations 176
+time step continuity errors : sum local = 3.265120549e-10, global = -3.264897899e-10, cumulative = 4.09776058e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001879103754, Final residual = 4.079609532e-07, No Iterations 131
+time step continuity errors : sum local = 1.459990842e-10, global = 1.427868116e-10, cumulative = 4.240547392e-09
+ExecutionTime = 9.92 s  ClockTime = 10 s
+
+Courant Number mean: 0.1254149649 max: 0.7433913123
+deltaT = 0.001257409028
+Time = 0.0358721
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.01272022657, Final residual = 6.304136927e-07, No Iterations 152
+time step continuity errors : sum local = 2.223140133e-10, global = 4.704203202e-11, cumulative = 4.287589424e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001806073512, Final residual = 4.797504693e-07, No Iterations 126
+time step continuity errors : sum local = 1.706791538e-10, global = -3.414176606e-12, cumulative = 4.284175247e-09
+ExecutionTime = 10.23 s  ClockTime = 10 s
+
+Courant Number mean: 0.1254141203 max: 0.7393144959
+deltaT = 0.001282557209
+Time = 0.0371547
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.0171171219, Final residual = 3.457256592e-07, No Iterations 128
+time step continuity errors : sum local = 1.254541858e-10, global = 1.133351339e-10, cumulative = 4.397510381e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001855897032, Final residual = 8.557271078e-07, No Iterations 136
+time step continuity errors : sum local = 3.120321674e-10, global = 4.392869914e-12, cumulative = 4.401903251e-09
+ExecutionTime = 10.53 s  ClockTime = 10 s
+
+Courant Number mean: 0.1279196543 max: 0.7503303457
+deltaT = 0.001282557209
+Time = 0.0384373
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.01183843659, Final residual = 8.196070617e-07, No Iterations 152
+time step continuity errors : sum local = 2.957693373e-10, global = -2.957693308e-10, cumulative = 4.10613392e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001777501779, Final residual = 4.488525026e-07, No Iterations 121
+time step continuity errors : sum local = 1.626347121e-10, global = -6.806346499e-11, cumulative = 4.038070455e-09
+ExecutionTime = 10.85 s  ClockTime = 11 s
+
+Courant Number mean: 0.1279165036 max: 0.7469022599
+deltaT = 0.001282557209
+Time = 0.0397198
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.01133891379, Final residual = 6.07929715e-07, No Iterations 132
+time step continuity errors : sum local = 2.180186785e-10, global = -4.186460136e-11, cumulative = 3.996205854e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001693063978, Final residual = 7.956257842e-07, No Iterations 131
+time step continuity errors : sum local = 2.879346747e-10, global = 2.338040862e-10, cumulative = 4.23000994e-09
+ExecutionTime = 11.15 s  ClockTime = 11 s
+
+Courant Number mean: 0.1279118499 max: 0.7437958789
+deltaT = 0.001282557209
+Time = 0.0410024
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.0111106022, Final residual = 2.222730159e-07, No Iterations 133
+time step continuity errors : sum local = 7.968094799e-11, global = -5.837397968e-11, cumulative = 4.17163596e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001617947902, Final residual = 5.812558669e-07, No Iterations 133
+time step continuity errors : sum local = 2.099773386e-10, global = -6.252474415e-11, cumulative = 4.109111216e-09
+ExecutionTime = 11.48 s  ClockTime = 11 s
+
+Courant Number mean: 0.1279055276 max: 0.7409114564
+deltaT = 0.00131105848
+Time = 0.0423134
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.01625597007, Final residual = 2.102970252e-07, No Iterations 126
+time step continuity errors : sum local = 7.826927402e-11, global = 6.963322018e-11, cumulative = 4.178744436e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001681706999, Final residual = 5.700806742e-07, No Iterations 114
+time step continuity errors : sum local = 2.124347606e-10, global = -1.628045015e-10, cumulative = 4.015939935e-09
+ExecutionTime = 11.77 s  ClockTime = 12 s
+
+Courant Number mean: 0.1307390109 max: 0.7546360505
+deltaT = 0.00131105848
+Time = 0.0436245
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.01056005983, Final residual = 1.072081581e-07, No Iterations 136
+time step continuity errors : sum local = 3.975308927e-11, global = -1.145624772e-11, cumulative = 4.004483687e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001630162618, Final residual = 9.894345345e-07, No Iterations 121
+time step continuity errors : sum local = 3.653749287e-10, global = -2.342896027e-10, cumulative = 3.770194084e-09
+ExecutionTime = 12.08 s  ClockTime = 12 s
+
+Courant Number mean: 0.130730774 max: 0.7520193842
+deltaT = 0.00131105848
+Time = 0.0449355
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.0103929272, Final residual = 8.458198848e-07, No Iterations 119
+time step continuity errors : sum local = 3.108667061e-10, global = 2.222256073e-10, cumulative = 3.992419692e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001615353846, Final residual = 3.133537523e-07, No Iterations 108
+time step continuity errors : sum local = 1.15132242e-10, global = -5.505749184e-11, cumulative = 3.9373622e-09
+ExecutionTime = 12.38 s  ClockTime = 12 s
+
+Courant Number mean: 0.1307229372 max: 0.7496089178
+deltaT = 0.00131105848
+Time = 0.0462466
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.01005251779, Final residual = 7.645170064e-07, No Iterations 114
+time step continuity errors : sum local = 2.802975287e-10, global = -2.339624736e-10, cumulative = 3.703399726e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001569856918, Final residual = 8.192812454e-07, No Iterations 110
+time step continuity errors : sum local = 3.00358649e-10, global = 1.918076695e-10, cumulative = 3.895207396e-09
+ExecutionTime = 12.67 s  ClockTime = 13 s
+
+Courant Number mean: 0.1307149795 max: 0.7474824534
+deltaT = 0.00131105848
+Time = 0.0475577
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.009698046107, Final residual = 9.865395654e-07, No Iterations 57
+time step continuity errors : sum local = 3.603376439e-10, global = -3.111131968e-10, cumulative = 3.584094199e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001570495973, Final residual = 9.534160296e-07, No Iterations 122
+time step continuity errors : sum local = 3.472847567e-10, global = 2.957947292e-10, cumulative = 3.879888928e-09
+ExecutionTime = 12.95 s  ClockTime = 13 s
+
+Courant Number mean: 0.1307068203 max: 0.7456648463
+deltaT = 0.00131105848
+Time = 0.0488687
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.009449213389, Final residual = 8.535362416e-07, No Iterations 114
+time step continuity errors : sum local = 3.095560156e-10, global = 2.661091558e-10, cumulative = 4.145998084e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001547088511, Final residual = 1.557579992e-07, No Iterations 133
+time step continuity errors : sum local = 5.629387296e-11, global = -2.071568691e-11, cumulative = 4.125282397e-09
+ExecutionTime = 13.27 s  ClockTime = 13 s
+
+Courant Number mean: 0.1306983678 max: 0.7441941532
+deltaT = 0.00131105848
+Time = 0.0501798
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.00918964322, Final residual = 9.480617084e-07, No Iterations 122
+time step continuity errors : sum local = 3.418050622e-10, global = 1.827510657e-10, cumulative = 4.308033463e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001522880096, Final residual = 9.722619801e-07, No Iterations 120
+time step continuity errors : sum local = 3.488577771e-10, global = -2.754662075e-10, cumulative = 4.032567255e-09
+ExecutionTime = 13.57 s  ClockTime = 13 s
+
+Courant Number mean: 0.1306897097 max: 0.7430538686
+deltaT = 0.00131105848
+Time = 0.0514908
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.009058223202, Final residual = 9.912192016e-07, No Iterations 117
+time step continuity errors : sum local = 3.553370695e-10, global = 3.397446839e-10, cumulative = 4.372311939e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001494180366, Final residual = 7.689992695e-07, No Iterations 120
+time step continuity errors : sum local = 2.738247349e-10, global = -2.219590169e-10, cumulative = 4.150352922e-09
+ExecutionTime = 13.86 s  ClockTime = 14 s
+
+Courant Number mean: 0.1306810514 max: 0.7421950881
+deltaT = 0.00131105848
+Time = 0.0528019
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.008959112122, Final residual = 9.351862206e-07, No Iterations 105
+time step continuity errors : sum local = 3.331548986e-10, global = -9.936219653e-11, cumulative = 4.050990726e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001492358774, Final residual = 8.881486006e-07, No Iterations 105
+time step continuity errors : sum local = 3.143842808e-10, global = 2.985834274e-10, cumulative = 4.349574153e-09
+ExecutionTime = 14.13 s  ClockTime = 14 s
+
+Courant Number mean: 0.1306722459 max: 0.7414790331
+deltaT = 0.00131105848
+Time = 0.054113
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.008734727833, Final residual = 9.708194292e-07, No Iterations 109
+time step continuity errors : sum local = 3.435701622e-10, global = 7.514211185e-11, cumulative = 4.424716265e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001466665291, Final residual = 9.863523351e-07, No Iterations 107
+time step continuity errors : sum local = 3.468026885e-10, global = 3.33533707e-10, cumulative = 4.758249972e-09
+ExecutionTime = 14.43 s  ClockTime = 14 s
+
+Courant Number mean: 0.1306633181 max: 0.740814219
+deltaT = 0.00131105848
+Time = 0.055424
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.008493996882, Final residual = 9.352600548e-07, No Iterations 133
+time step continuity errors : sum local = 3.292226798e-10, global = -2.744133232e-10, cumulative = 4.483836649e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001446419812, Final residual = 9.49073786e-07, No Iterations 118
+time step continuity errors : sum local = 3.32042047e-10, global = 3.051783232e-10, cumulative = 4.789014972e-09
+ExecutionTime = 14.72 s  ClockTime = 15 s
+
+Courant Number mean: 0.1306542779 max: 0.7401711203
+deltaT = 0.00131105848
+Time = 0.0567351
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.008455986616, Final residual = 6.105282309e-07, No Iterations 117
+time step continuity errors : sum local = 2.135430844e-10, global = 1.692067491e-10, cumulative = 4.958221721e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001441682048, Final residual = 9.891338899e-07, No Iterations 121
+time step continuity errors : sum local = 3.443648684e-10, global = 2.706836688e-10, cumulative = 5.22890539e-09
+ExecutionTime = 15.02 s  ClockTime = 15 s
+
+Courant Number mean: 0.1306449578 max: 0.7394825326
+deltaT = 0.00131105848
+Time = 0.0580461
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.008227782377, Final residual = 9.877293971e-07, No Iterations 117
+time step continuity errors : sum local = 3.441341803e-10, global = -8.695927625e-11, cumulative = 5.141946113e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001430706605, Final residual = 8.826642511e-07, No Iterations 121
+time step continuity errors : sum local = 3.056693289e-10, global = 2.38388642e-10, cumulative = 5.380334756e-09
+ExecutionTime = 15.32 s  ClockTime = 15 s
+
+Courant Number mean: 0.130635693 max: 0.7388349442
+deltaT = 0.00131105848
+Time = 0.0593572
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.007971973383, Final residual = 3.264153078e-07, No Iterations 131
+time step continuity errors : sum local = 1.131349379e-10, global = -1.047968203e-10, cumulative = 5.275537935e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001425756739, Final residual = 9.9322373e-07, No Iterations 115
+time step continuity errors : sum local = 3.418299226e-10, global = 2.999160671e-10, cumulative = 5.575454002e-09
+ExecutionTime = 15.66 s  ClockTime = 15 s
+
+Courant Number mean: 0.1306268996 max: 0.7382059974
+deltaT = 0.00131105848
+Time = 0.0606682
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.007778033383, Final residual = 5.709976491e-07, No Iterations 132
+time step continuity errors : sum local = 1.968641054e-10, global = 1.53350361e-10, cumulative = 5.728804363e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001412996663, Final residual = 4.71160587e-07, No Iterations 133
+time step continuity errors : sum local = 1.612481932e-10, global = -8.800478996e-11, cumulative = 5.640799573e-09
+ExecutionTime = 16.02 s  ClockTime = 16 s
+
+Courant Number mean: 0.1306186751 max: 0.7376772234
+deltaT = 0.00131105848
+Time = 0.0619793
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.007622480664, Final residual = 3.79394909e-07, No Iterations 113
+time step continuity errors : sum local = 1.300219645e-10, global = -8.528564906e-11, cumulative = 5.555513924e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001385533825, Final residual = 8.150108682e-07, No Iterations 117
+time step continuity errors : sum local = 2.775497528e-10, global = 2.221293717e-10, cumulative = 5.777643296e-09
+ExecutionTime = 16.34 s  ClockTime = 16 s
+
+Courant Number mean: 0.130610787 max: 0.7371925222
+deltaT = 0.00131105848
+Time = 0.0632904
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.007475207813, Final residual = 3.416512553e-07, No Iterations 131
+time step continuity errors : sum local = 1.166028507e-10, global = 5.961756007e-11, cumulative = 5.837260856e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001375420411, Final residual = 9.602029868e-07, No Iterations 119
+time step continuity errors : sum local = 3.254515102e-10, global = 2.893410017e-10, cumulative = 6.126601858e-09
+ExecutionTime = 16.66 s  ClockTime = 16 s
+
+Courant Number mean: 0.1306030615 max: 0.7368132525
+deltaT = 0.00131105848
+Time = 0.0646014
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.007380003362, Final residual = 3.824511547e-07, No Iterations 133
+time step continuity errors : sum local = 1.29949693e-10, global = 9.724395636e-11, cumulative = 6.223845814e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001375755995, Final residual = 9.54405403e-07, No Iterations 128
+time step continuity errors : sum local = 3.222002101e-10, global = 2.60235136e-10, cumulative = 6.48408095e-09
+ExecutionTime = 16.99 s  ClockTime = 17 s
+
+Courant Number mean: 0.130595459 max: 0.7364423359
+deltaT = 0.00131105848
+Time = 0.0659125
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.007269103667, Final residual = 8.421390208e-07, No Iterations 117
+time step continuity errors : sum local = 2.847164414e-10, global = -1.727803574e-10, cumulative = 6.311300593e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001380546765, Final residual = 3.71835676e-07, No Iterations 131
+time step continuity errors : sum local = 1.24894562e-10, global = -4.722301596e-11, cumulative = 6.264077577e-09
+ExecutionTime = 17.34 s  ClockTime = 17 s
+
+Courant Number mean: 0.1305877223 max: 0.7361494796
+deltaT = 0.00131105848
+Time = 0.0672235
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.007085119224, Final residual = 4.455506205e-07, No Iterations 131
+time step continuity errors : sum local = 1.502273658e-10, global = 1.37675958e-10, cumulative = 6.401753535e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001365795202, Final residual = 9.552022953e-07, No Iterations 126
+time step continuity errors : sum local = 3.195070835e-10, global = 2.860546424e-10, cumulative = 6.687808177e-09
+ExecutionTime = 17.71 s  ClockTime = 18 s
+
+Courant Number mean: 0.1305800638 max: 0.7358133623
+deltaT = 0.00131105848
+Time = 0.0685346
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.007283927061, Final residual = 8.052894089e-07, No Iterations 132
+time step continuity errors : sum local = 2.703737174e-10, global = -2.549628374e-10, cumulative = 6.43284534e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001376890234, Final residual = 6.989814545e-07, No Iterations 130
+time step continuity errors : sum local = 2.333047941e-10, global = 1.373354208e-10, cumulative = 6.570180761e-09
+ExecutionTime = 18.03 s  ClockTime = 18 s
+
+Courant Number mean: 0.1305722329 max: 0.7355544883
+deltaT = 0.00131105848
+Time = 0.0698457
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.007176946511, Final residual = 6.545511343e-07, No Iterations 110
+time step continuity errors : sum local = 2.193438101e-10, global = -8.677875819e-12, cumulative = 6.561502885e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001402155475, Final residual = 9.951626979e-07, No Iterations 122
+time step continuity errors : sum local = 3.302745949e-10, global = 3.06243367e-10, cumulative = 6.867746252e-09
+ExecutionTime = 18.35 s  ClockTime = 18 s
+
+Courant Number mean: 0.1305646488 max: 0.7353235947
+deltaT = 0.00131105848
+Time = 0.0711567
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.007287108909, Final residual = 9.41391998e-07, No Iterations 131
+time step continuity errors : sum local = 3.134625373e-10, global = 2.384546516e-10, cumulative = 7.106200903e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001425109823, Final residual = 9.340139477e-07, No Iterations 130
+time step continuity errors : sum local = 3.088590486e-10, global = 2.015743377e-10, cumulative = 7.307775241e-09
+ExecutionTime = 18.67 s  ClockTime = 19 s
+
+Courant Number mean: 0.1305568203 max: 0.735476767
+deltaT = 0.00131105848
+Time = 0.0724678
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.007052083809, Final residual = 8.118920775e-07, No Iterations 131
+time step continuity errors : sum local = 2.694215007e-10, global = 1.646299299e-10, cumulative = 7.472405171e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001430665417, Final residual = 5.372282916e-07, No Iterations 131
+time step continuity errors : sum local = 1.770143158e-10, global = 1.08484927e-10, cumulative = 7.580890098e-09
+ExecutionTime = 19.03 s  ClockTime = 19 s
+
+Courant Number mean: 0.1305489661 max: 0.7356523563
+deltaT = 0.00131105848
+Time = 0.0737788
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.006993180684, Final residual = 9.588486504e-07, No Iterations 113
+time step continuity errors : sum local = 3.172217483e-10, global = -1.228886667e-10, cumulative = 7.458001431e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001433765528, Final residual = 7.189769583e-07, No Iterations 129
+time step continuity errors : sum local = 2.359868714e-10, global = 1.688464065e-10, cumulative = 7.626847838e-09
+ExecutionTime = 19.38 s  ClockTime = 19 s
+
+Courant Number mean: 0.1305414937 max: 0.7358359437
+deltaT = 0.00131105848
+Time = 0.0750899
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.006958356262, Final residual = 8.422759681e-07, No Iterations 132
+time step continuity errors : sum local = 2.76941992e-10, global = 9.52603457e-11, cumulative = 7.722108184e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001462512864, Final residual = 3.835114231e-07, No Iterations 127
+time step continuity errors : sum local = 1.247804e-10, global = -4.399863111e-11, cumulative = 7.678109552e-09
+ExecutionTime = 19.73 s  ClockTime = 20 s
+
+Courant Number mean: 0.1305345455 max: 0.736007106
+deltaT = 0.00131105848
+Time = 0.0764009
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.006928571963, Final residual = 9.3577893e-07, No Iterations 132
+time step continuity errors : sum local = 3.066873077e-10, global = 1.788106983e-10, cumulative = 7.856920251e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001478118195, Final residual = 6.928773318e-07, No Iterations 127
+time step continuity errors : sum local = 2.246683506e-10, global = 1.679626648e-10, cumulative = 8.024882916e-09
+ExecutionTime = 20.04 s  ClockTime = 20 s
+
+Courant Number mean: 0.1305282836 max: 0.7361640734
+deltaT = 0.00131105848
+Time = 0.077712
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.006804406256, Final residual = 6.466155518e-08, No Iterations 133
+time step continuity errors : sum local = 2.105352252e-11, global = -1.218337778e-11, cumulative = 8.012699538e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001499819529, Final residual = 9.700389564e-07, No Iterations 120
+time step continuity errors : sum local = 3.128047823e-10, global = 3.037439924e-10, cumulative = 8.31644353e-09
+ExecutionTime = 20.38 s  ClockTime = 20 s
+
+Courant Number mean: 0.1305224831 max: 0.736296887
+deltaT = 0.00131105848
+Time = 0.0790231
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.006784224998, Final residual = 9.823768505e-07, No Iterations 119
+time step continuity errors : sum local = 3.177665539e-10, global = -1.825972183e-10, cumulative = 8.133846312e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001528146447, Final residual = 9.495962699e-07, No Iterations 119
+time step continuity errors : sum local = 3.045804088e-10, global = 2.770487533e-10, cumulative = 8.410895065e-09
+ExecutionTime = 20.71 s  ClockTime = 21 s
+
+Courant Number mean: 0.130517058 max: 0.7364062543
+deltaT = 0.00131105848
+Time = 0.0803341
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.006955970773, Final residual = 3.712943934e-07, No Iterations 128
+time step continuity errors : sum local = 1.196440837e-10, global = -7.147034055e-11, cumulative = 8.339424725e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001616620686, Final residual = 9.805452852e-07, No Iterations 123
+time step continuity errors : sum local = 3.131225005e-10, global = 1.828599301e-10, cumulative = 8.522284655e-09
+ExecutionTime = 21.04 s  ClockTime = 21 s
+
+Courant Number mean: 0.1305114294 max: 0.7364963888
+deltaT = 0.00131105848
+Time = 0.0816452
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.00684208837, Final residual = 6.968669059e-07, No Iterations 124
+time step continuity errors : sum local = 2.239155852e-10, global = -1.103691506e-10, cumulative = 8.411915504e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001617010934, Final residual = 7.922705258e-07, No Iterations 111
+time step continuity errors : sum local = 2.518791686e-10, global = 1.596966986e-11, cumulative = 8.427885174e-09
+ExecutionTime = 21.33 s  ClockTime = 21 s
+
+Courant Number mean: 0.1305057734 max: 0.736575425
+deltaT = 0.00131105848
+Time = 0.0829562
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.006820321896, Final residual = 6.404323133e-07, No Iterations 134
+time step continuity errors : sum local = 2.049935194e-10, global = 1.182308681e-11, cumulative = 8.439708261e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001639551796, Final residual = 3.253077278e-07, No Iterations 117
+time step continuity errors : sum local = 1.03167702e-10, global = -2.592972779e-11, cumulative = 8.413778533e-09
+ExecutionTime = 21.63 s  ClockTime = 21 s
+
+Courant Number mean: 0.13050026 max: 0.736650493
+deltaT = 0.00131105848
+Time = 0.0842673
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.006675155654, Final residual = 7.554739847e-07, No Iterations 110
+time step continuity errors : sum local = 2.410994741e-10, global = -1.534919692e-10, cumulative = 8.260286564e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001667948171, Final residual = 7.282509781e-07, No Iterations 117
+time step continuity errors : sum local = 2.301994521e-10, global = 2.126276484e-10, cumulative = 8.472914212e-09
+ExecutionTime = 22.05 s  ClockTime = 22 s
+
+Courant Number mean: 0.1304954002 max: 0.7367279828
+deltaT = 0.00131105848
+Time = 0.0855784
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.006536324972, Final residual = 6.931271416e-07, No Iterations 117
+time step continuity errors : sum local = 2.201905557e-10, global = -5.134272842e-11, cumulative = 8.421571484e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001684549841, Final residual = 8.21455709e-07, No Iterations 128
+time step continuity errors : sum local = 2.581031458e-10, global = 9.314099561e-11, cumulative = 8.514712479e-09
+ExecutionTime = 22.47 s  ClockTime = 22 s
+
+Courant Number mean: 0.1304911797 max: 0.736793989
+deltaT = 0.00131105848
+Time = 0.0868894
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.006603262104, Final residual = 9.92849659e-07, No Iterations 117
+time step continuity errors : sum local = 3.142611822e-10, global = -2.444914614e-10, cumulative = 8.270221018e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001663179896, Final residual = 8.576779342e-07, No Iterations 129
+time step continuity errors : sum local = 2.690959662e-10, global = 1.507068095e-10, cumulative = 8.420927827e-09
+ExecutionTime = 22.82 s  ClockTime = 23 s
+
+Courant Number mean: 0.1304868932 max: 0.7368681624
+deltaT = 0.00131105848
+Time = 0.0882005
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.006580998328, Final residual = 2.66701645e-07, No Iterations 134
+time step continuity errors : sum local = 8.416368869e-11, global = 2.785199839e-11, cumulative = 8.448779826e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001661826905, Final residual = 9.393602998e-07, No Iterations 127
+time step continuity errors : sum local = 2.921272432e-10, global = 2.469612928e-10, cumulative = 8.695741119e-09
+ExecutionTime = 23.12 s  ClockTime = 23 s
+
+Courant Number mean: 0.1304833042 max: 0.7369479068
+deltaT = 0.00131105848
+Time = 0.0895115
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.006688438099, Final residual = 9.555037084e-07, No Iterations 135
+time step continuity errors : sum local = 2.986513085e-10, global = 1.316267411e-10, cumulative = 8.82736786e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001703549465, Final residual = 9.567325443e-07, No Iterations 130
+time step continuity errors : sum local = 2.947923302e-10, global = 2.60792344e-10, cumulative = 9.088160204e-09
+ExecutionTime = 23.45 s  ClockTime = 23 s
+
+Courant Number mean: 0.1304803854 max: 0.7370459068
+deltaT = 0.00131105848
+Time = 0.0908226
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.006670447038, Final residual = 7.124226205e-07, No Iterations 119
+time step continuity errors : sum local = 2.209120916e-10, global = -1.71813474e-10, cumulative = 8.91634673e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001745525534, Final residual = 9.866159426e-07, No Iterations 118
+time step continuity errors : sum local = 3.015273389e-10, global = 2.90009553e-10, cumulative = 9.206356283e-09
+ExecutionTime = 23.75 s  ClockTime = 24 s
+
+Courant Number mean: 0.1304785693 max: 0.7371754638
+deltaT = 0.00131105848
+Time = 0.0921336
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.006811168662, Final residual = 9.461977594e-07, No Iterations 132
+time step continuity errors : sum local = 2.905113568e-10, global = 1.09595776e-10, cumulative = 9.315952059e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001757349098, Final residual = 9.358929842e-07, No Iterations 119
+time step continuity errors : sum local = 2.831475513e-10, global = 2.341881679e-10, cumulative = 9.550140227e-09
+ExecutionTime = 24.06 s  ClockTime = 24 s
+
+Courant Number mean: 0.1304778619 max: 0.7373327598
+deltaT = 0.00131105848
+Time = 0.0934447
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.006782009301, Final residual = 5.649146238e-07, No Iterations 138
+time step continuity errors : sum local = 1.718209713e-10, global = 1.024510018e-10, cumulative = 9.652591228e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001773961538, Final residual = 6.65330556e-07, No Iterations 118
+time step continuity errors : sum local = 1.992107362e-10, global = 1.44106751e-10, cumulative = 9.796697979e-09
+ExecutionTime = 24.39 s  ClockTime = 24 s
+
+Courant Number mean: 0.1304783671 max: 0.7375202533
+deltaT = 0.00131105848
+Time = 0.0947558
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.006916330892, Final residual = 9.476175361e-07, No Iterations 126
+time step continuity errors : sum local = 2.855828689e-10, global = -6.509987487e-11, cumulative = 9.731598105e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001782778189, Final residual = 3.625088293e-07, No Iterations 118
+time step continuity errors : sum local = 1.078319462e-10, global = 6.475828431e-11, cumulative = 9.796356389e-09
+ExecutionTime = 24.7 s  ClockTime = 25 s
+
+Courant Number mean: 0.1304797331 max: 0.7377371739
+deltaT = 0.00131105848
+Time = 0.0960668
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.006846936823, Final residual = 6.297595344e-07, No Iterations 122
+time step continuity errors : sum local = 1.884021469e-10, global = -1.535663005e-10, cumulative = 9.642790088e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001803960791, Final residual = 9.51693562e-07, No Iterations 119
+time step continuity errors : sum local = 2.810191085e-10, global = 2.575553434e-10, cumulative = 9.900345432e-09
+ExecutionTime = 25.06 s  ClockTime = 25 s
+
+Courant Number mean: 0.1304816743 max: 0.7379786438
+deltaT = 0.00131105848
+Time = 0.0973779
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.006963593457, Final residual = 8.316263694e-07, No Iterations 135
+time step continuity errors : sum local = 2.468829555e-10, global = -5.820888802e-11, cumulative = 9.842136544e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001855500883, Final residual = 3.772663258e-07, No Iterations 120
+time step continuity errors : sum local = 1.106287882e-10, global = 8.378737784e-11, cumulative = 9.925923922e-09
+ExecutionTime = 25.42 s  ClockTime = 25 s
+
+Courant Number mean: 0.1304842679 max: 0.7382420465
+deltaT = 0.00131105848
+Time = 0.0986889
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.00707229656, Final residual = 4.992316704e-07, No Iterations 121
+time step continuity errors : sum local = 1.473097273e-10, global = -9.526678821e-12, cumulative = 9.916397243e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.001917642194, Final residual = 9.220471284e-07, No Iterations 117
+time step continuity errors : sum local = 2.682309941e-10, global = -2.098088801e-10, cumulative = 9.706588363e-09
+ExecutionTime = 25.8 s  ClockTime = 26 s
+
+Courant Number mean: 0.130487679 max: 0.7385312802
+deltaT = 0.00131105848
+Time = 0.1
+
+DICPCG:  Solving for cellDisplacementx, Initial residual = 0, Final residual = 0, No Iterations 0
+DICPCG:  Solving for cellDisplacementy, Initial residual = 0, Final residual = 0, No Iterations 0
+inverseDistance : detected 2 mesh regions
+    zone:0 nCells:10250  voxels:(111 111 1) bb:(-2.535369796e-06 -2.535369796e-06 -2.535369796e-06) (2.500002535 0.4100025354 0.1000025354)
+    zone:1 nCells:2224  voxels:(111 111 1) bb:(0.0499989753 0.0999989753 -1.024695077e-06) (1.050001025 0.3000010247 0.1000010247)
+Overset analysis : nCells : 12474
+    calculated   : 11982
+    interpolated : 272 (interpolated from local:272  mixed local/remote:0  remote:0)
+    hole         : 220
+
+PIMPLE: iteration 1
+DILUPBiCGStab:  Solving for p, Initial residual = 0.006817480038, Final residual = 6.101117651e-07, No Iterations 140
+time step continuity errors : sum local = 1.78757134e-10, global = -1.787564527e-10, cumulative = 9.52783191e-09
+DILUPBiCGStab:  Solving for p, Initial residual = 0.00190747749, Final residual = 5.104830421e-07, No Iterations 119
+time step continuity errors : sum local = 1.476093567e-10, global = 1.102416959e-10, cumulative = 9.638073606e-09
+ExecutionTime = 26.35 s  ClockTime = 26 s
+
+End
+

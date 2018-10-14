@@ -1,15 +1,16 @@
 #!/bin/sh
 cd ${0%/*} || exit 1    # Run from this directory
-. $WM_PROJECT_DIR/bin/tools/CleanFunctions
 
-cleanCase
-rm -f constant/polyMesh/boundary
-rm -f constant/polyMesh/zoneID
-rm -f constant/cellInterpolationWeight
+(cd steady && ./Allclean)
+(cd transient && ./Allclean)
 
-rm -rf 0
-touch ./comms/kill.dat
-rm -rf comms
-rm ./spooles.out
+rm ./fem/break.foam
+rm ./fem/old.dat
+rm ./fem/b31.cvg
+rm ./fem/b31.dat
+rm ./fem/b31.frd
+rm ./fem/b31.sta
+rm ./fem/b31.rin
+rm ./fem/b31.rout
 
 #------------------------------------------------------------------------------

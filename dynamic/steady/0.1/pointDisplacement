@@ -1,0 +1,73 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1806                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       pointVectorField;
+    location    "0.1";
+    object      pointDisplacement;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+dimensions      [0 1 0 0 0 0 0];
+
+
+internalField   uniform (0 0 0);
+
+boundaryField
+{
+    inlet
+    {
+        type            uniformFixedValue;
+        value           uniform (0 0 0);
+        uniformValue    constant (0 0 0);
+    }
+    lower
+    {
+        type            uniformFixedValue;
+        value           uniform (0 0 0);
+        uniformValue    constant (0 0 0);
+    }
+    upper
+    {
+        type            uniformFixedValue;
+        value           uniform (0 0 0);
+        uniformValue    constant (0 0 0);
+    }
+    outlet
+    {
+        type            uniformFixedValue;
+        value           uniform (0 0 0);
+        uniformValue    constant (0 0 0);
+    }
+    empty
+    {
+        type            empty;
+    }
+    overset
+    {
+        type            zeroGradient;
+        patchType       overset;
+    }
+    cylinder
+    {
+        type            uniformFixedValue;
+        value           uniform (0 0 0);
+        uniformValue    constant (0 0 0);
+    }
+    beam
+    {
+        type            uniformFixedValue;
+        value           uniform (0 0 0);
+        uniformValue    constant (0 0 0);
+    }
+}
+
+
+// ************************************************************************* //

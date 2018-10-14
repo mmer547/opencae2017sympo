@@ -1,0 +1,42 @@
+/*---------------------------------------------------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1806                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+Build  : v1806
+Arch   : "LSB;label=32;scalar=64"
+Exec   : topoSet
+Date   : Oct 15 2018
+Time   : 00:32:07
+Host   : "LAPTOP-OUB5D812"
+PID    : 1074
+I/O    : uncollated
+Case   : /mnt/c/Users/hamme/Documents/800_OCBKANSAI/shibata/opencae2017sympo-kai/steady
+nProcs : 1
+trapFpe: Floating point exception trapping enabled (FOAM_SIGFPE).
+fileModificationChecking : Monitoring run-time modified files using timeStampMaster (fileModificationSkew 10)
+allowSystemOperations : Allowing user-supplied system call operations
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+Create time
+
+Create polyMesh for time = 0
+
+Reading topoSetDict
+
+Time = 0
+    mesh not changed.
+Created cellSet c0
+    Applying source zoneToCell
+    Adding all cells of cellZone ZoneID ...
+    Found matching zone ZoneID with 10250 cells.
+    cellSet c0 now size 10250
+Created cellSet c1
+    Applying source zoneToCell
+    Adding all cells of cellZone ZoneID2 ...
+    Found matching zone ZoneID2 with 2224 cells.
+    cellSet c1 now size 2224
+End
+
