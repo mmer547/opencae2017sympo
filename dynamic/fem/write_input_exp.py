@@ -31,6 +31,12 @@ resflg = False
 oldtimes = 0.0
 # FEMのAMPRITUDEの名前に付ける数字
 ampnum = 0
+# 要素の節点数
+num_node = 41
+# beamのX座標最小値
+x_min = 0.25
+# beamのX座標最大値
+x_max = 0.6
 
 #ここからループ
 while os.path.exists(files) == False:
@@ -41,8 +47,9 @@ while os.path.exists(files) == False:
     elif os.path.exists(lock_path) == False:
         # 初期状態ではforces.outがないためpositions.inをコピーする
         if os.path.exists(in_path) == False:
-            print('No positions.in. copying...')
-            shutil.copyfile('./../fem/positions.in', './comms/positions.in')
+            # print('No positions.in. copying...')
+            # shutil.copyfile('./../fem/positions.in', './comms/positions.in')
+            pass
         else:
             print('calculating external solver.')
             # forces.outの中身を読み込む
@@ -61,9 +68,9 @@ while os.path.exists(files) == False:
                         times = float(buf[3].split('=')[1])
                         continue
                     # 節点座標を読み取る行が来た場合
-                    if buf[0] == 'points':
-                        flg = 1
-                        continue
+                    # if buf[0] == 'points':
+                    #     flg = 1
+                    #     continue
                     # 力を読み取る行が来た場合
                     if buf[0] == 'forces':
                         flg = 2
@@ -74,10 +81,11 @@ while os.path.exists(files) == False:
                         continue
 
                     # フラグに合わせて処理を実施(今のところ差がないです)
-                    if flg == 1:
-                        if len(buf[0])>1 and buf[0][0]=='(':
-                            points.append(map(float,[buf[0].strip('('),buf[1],buf[2].strip(')')]))
-                    elif flg == 2:
+                    # if flg == 1:
+                    #     if len(buf[0])>1 and buf[0][0]=='(':
+                    #         points.append(map(float,[buf[0].strip('('),buf[1],buf[2].strip(')')]))
+                    # elif flg == 2:
+                    if flg == 2:
                         if len(buf[0])>1 and buf[0][0]=='(':
                             forces.append(map(float,[buf[0].strip('('),buf[1],buf[2].strip(')')]))
                     elif flg == 3:
@@ -85,6 +93,11 @@ while os.path.exists(files) == False:
                             moments.append(map(float,[buf[0].strip('('),buf[1],buf[2].strip(')')]))
                     else:
                         pass
+
+                # 初期のpointsの作成
+                points = []
+                for i in range(num_node):
+                    points.append([(x_max-x_min)/(num_node-1)*i+x_min, 0.0, 0.0])
 
                 # FEMインプットの書きだし
                 with open(ccx_inp, 'w') as f:
@@ -96,20 +109,11 @@ while os.path.exists(files) == False:
                             f.write(
                                     '{0}, {1}, {2}, {3}\n'.format(c+1, i[0], i[1], i[2])
                                     )
-                        buf = '\n'.join([
-                                '*Element, type=B31, ELSET=EALL',
-                                ' 1,  1,  2',
-                                ' 2,  2,  3',
-                                ' 3,  3,  4',
-                                ' 4,  4,  5',
-                                ' 5,  5,  6',
-                                ' 6,  6,  7',
-                                ' 7,  7,  8',
-                                ' 8,  8,  9',
-                                ' 9,  9, 10',
-                                '10, 10, 11'
-                                ])
-                        buf += '\n'
+
+                        buf = '*Element, type=B31, ELSET=EALL\n'
+                        for i in range(num_node-1):
+                            buf += '{0}, {1}, {2}'.format(i+1,i+1,i+2)
+                            buf += '\n'
                         # 断面プロパティの書き出し
                         buf += '\n'.join([
                                 '*Beam Section, elset=EALL, material=Material-1, section=RECT',
@@ -123,7 +127,7 @@ while os.path.exists(files) == False:
                                 '*Elastic',
                                 ' 1.6e+06, 0.4999',
                                 '*Density',
-                                ' 7.8e-09'
+                                ' 0.91e-09'
                                 ])
                         buf += '\n'
                         # 境界条件の書き出し
@@ -146,7 +150,7 @@ while os.path.exists(files) == False:
                     print('times='+str(times))
                     stime = str((times-oldtimes)/100.0)+', '+ \
                             str(times-oldtimes)+', '+ \
-                            str((times-oldtimes)*1e-5)+', '+ \
+                            str((times-oldtimes)*1e-10)+', '+ \
                             str((times-oldtimes)/100.0)
                     buf = '\n'.join([
                             '*Step',
@@ -213,7 +217,7 @@ while os.path.exists(files) == False:
                             ttt = [i[11:13],i[13:25],i[25:37],i[37:49]]
                             buf2 = map(float, ttt)
                             temp.append([buf2[1],buf2[2],buf2[3]])
-                    temp = temp[0:11]
+                    temp = temp[0:num_node]
 
                 # 座標値の更新
                 for i in range(len(points)):

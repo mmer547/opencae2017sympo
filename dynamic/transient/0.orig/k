@@ -16,7 +16,7 @@ FoamFile
 
 dimensions      [ 0 2 -2 0 0 0 0 ];
 
-internalField   uniform 0.2;
+internalField   uniform 0.1;
 
 boundaryField
 {
@@ -25,14 +25,14 @@ boundaryField
     "(lower|upper|cylinder)"
     {
         type            kqRWallFunction;
-        value           uniform 0;
+        value           uniform 0.1;
     }
 
     beam
     {
         type            kqRWallFunction;
-        //value           uniform 0;
-        value           nonuniform 0;
+        value           uniform 0.1;
+        //value           nonuniform 0;
     }
 
     inlet
@@ -44,8 +44,8 @@ boundaryField
 
     outlet
     {
-        type            calculated;
-        value           $internalField;
+        type            inletOutlet;
+        inletValue      $internalField;
     }
 
     overset

@@ -3,6 +3,8 @@ cd ${0%/*} || exit 1    # Run from this directory
 . $WM_PROJECT_DIR/bin/tools/RunFunctions
 
 ./Allrun.pre
+touch post.foam
+
 rm ./0/pointDisplacement
 cp ./0.orig/pointDisplacement ./0/
 

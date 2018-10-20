@@ -31,21 +31,4 @@ displacementLaplacianCoeffs
     diffusivity     inverseDistance ( beam );
 }
 
-//solver          multiSolidBodyMotionSolver;
-//
-//multiSolidBodyMotionSolverCoeffs
-//{
-//    movingZone
-//    {
-//        solidBodyMotionFunction rotatingMotion;
-//        rotatingMotionCoeffs
-//        {
-//            //origin      (0.005 0.005 0.005);
-//            origin      (5 5 5);
-//            axis        (1 0 0);
-//            omega       100.0;
-//        }
-//    }
-//}
-
 // ************************************************************************* //

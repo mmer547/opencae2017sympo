@@ -17,7 +17,7 @@ FoamFile
 
 dimensions      [ 0 2 -3 0 0 0 0 ];
 
-internalField   uniform 0;
+internalField   uniform 0.01;
 
 boundaryField
 {
@@ -44,8 +44,8 @@ boundaryField
 
     outlet
     {
-        type            calculated;
-        value           $internalField;
+        type            inletOutlet;
+        inletValue      $internalField;
     }
 
     overset

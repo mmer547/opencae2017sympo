@@ -27,13 +27,13 @@ endTime         10;
 
 deltaT          0.001;
 
-//writeControl    adjustableRunTime;
+writeControl    adjustableRunTime;
 
-//writeInterval   0.001;
+writeInterval   0.001;
 
-writeControl    timeStep;
+//writeControl    timeStep;
 
-writeInterval   1;
+//writeInterval   1;
 
 purgeWrite      0;
 
@@ -49,9 +49,9 @@ timePrecision   6;
 
 runTimeModifiable true;
 
-adjustTimeStep  no;
+adjustTimeStep  yes;
 
-maxCo           0.5;
+maxCo           10.0;
 
 maxDeltaT       0.1;
 
